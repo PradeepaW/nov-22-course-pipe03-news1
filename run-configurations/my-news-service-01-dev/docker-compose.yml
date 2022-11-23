@@ -8,6 +8,9 @@ services:
     volumes:
       - ${HOST_MSR_LICENSE_FILE}:/tmp/license.xml
       - ./application.properties:/tmp/application.properties
+      - ../../:/mnt/project-home/
+      - ../../code/is-packages/MyNewsService/:${GUEST_IS_HOME}/packages/MyNewsService/
+      - ../../code/is-packages/MyMailService/:${GUEST_IS_HOME}/packages/MyMailService/
     environment:
       - SAG_IS_LICENSE_FILE=/tmp/license.xml
       - SAG_IS_CONFIG_PROPERTIES=/tmp/application.properties
